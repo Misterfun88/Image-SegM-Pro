@@ -21,3 +21,11 @@ numSegments = 500  # How many superpixels to start with - input for SLIC functio
 Sigma = 4 # This parameter controls superpixel shape. Higher values make superpixels more square.
 
 #SPHC Parameters:
+segmentsToMerge = 50 # How many superpixels to merge based on color similarity
+distance_limit = .6  # Limits which segments get merged based on their difference in average color
+####################################################################################################
+
+import matplotlib.pyplot as plt, argparse, numpy as np, math, sys, copy
+from skimage.segmentation import slic, mark_boundaries
+from skimage.util import img_as_float
+from skimage import io
