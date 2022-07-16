@@ -29,3 +29,16 @@ import matplotlib.pyplot as plt, argparse, numpy as np, math, sys, copy
 from skimage.segmentation import slic, mark_boundaries
 from skimage.util import img_as_float
 from skimage import io
+from collections import defaultdict
+
+def initiateSegmentAttributes(segm_grid, image):
+    '''
+    Each segment formed by sklearn's SLIC function is assigned a dictionary of attributes for efficiency.
+    :param segm_grid: Each pixel has been identified with a segment identifier by the skimage SLIC function
+    :param image: Each pixel has R, B, and G value associated with it
+    :return: Dictionary of dictionaries of attributes for each segment
+    '''
+    def initialSegmAttr():
+        return {'neighbors': set(), 'R': [], 'G': [], 'B': [], 'coord': set(),
+                         'R_avg': 0.0, 'G_avg': 0.0, 'B_avg': 0.0}
+    segm_dict = defaultdict(initialSegmAttr)
