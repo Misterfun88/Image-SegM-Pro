@@ -42,3 +42,13 @@ def initiateSegmentAttributes(segm_grid, image):
         return {'neighbors': set(), 'R': [], 'G': [], 'B': [], 'coord': set(),
                          'R_avg': 0.0, 'G_avg': 0.0, 'B_avg': 0.0}
     segm_dict = defaultdict(initialSegmAttr)
+
+    for i in range(len(segm_grid)):
+        for j in range(len(segm_grid[i])):
+            if j <> len(segm_grid[i]) - 1 and segm_grid[i][j] <> segm_grid[i][j+1]:
+                segm_dict[segm_grid[i][j]]['neighbors'].add(segm_grid[i][j+1])
+                segm_dict[segm_grid[i][j+1]]['neighbors'].add(segm_grid[i][j])
+            if i <> len(segm_grid) - 1 and segm_grid[i][j] <> segm_grid[i+1][j]:
+                segm_dict[segm_grid[i][j]]['neighbors'].add(segm_grid[i+1][j])
+                segm_dict[segm_grid[i+1][j]]['neighbors'].add(segm_grid[i][j])
+            segm_dict[segm_grid[i][j]]['R'].append(image[i][j][0])
