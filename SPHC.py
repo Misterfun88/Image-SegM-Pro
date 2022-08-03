@@ -52,3 +52,11 @@ def initiateSegmentAttributes(segm_grid, image):
                 segm_dict[segm_grid[i][j]]['neighbors'].add(segm_grid[i+1][j])
                 segm_dict[segm_grid[i+1][j]]['neighbors'].add(segm_grid[i][j])
             segm_dict[segm_grid[i][j]]['R'].append(image[i][j][0])
+            segm_dict[segm_grid[i][j]]['B'].append(image[i][j][1])
+            segm_dict[segm_grid[i][j]]['G'].append(image[i][j][2])
+            segm_dict[segm_grid[i][j]]['coord'].add((i,j))
+    return segm_dict
+
+def getNearestNeighbors(segm_dict):
+    '''
+    Calculates the average R, B, and G values for each segment. Then finds the two neighboring segments with
