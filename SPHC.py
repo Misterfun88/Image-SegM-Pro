@@ -60,3 +60,12 @@ def initiateSegmentAttributes(segm_grid, image):
 def getNearestNeighbors(segm_dict):
     '''
     Calculates the average R, B, and G values for each segment. Then finds the two neighboring segments with
+    the smallest euclidean distance (for the three dimensions of R, B, and G).
+    :param segm_dict: dictionary of dictionaries of segment attributes
+    :return: segment pair with smallest color euclidean distance; distance value
+    '''
+    for k, v in segm_dict.items():
+        v['R_avg'] = sum(v['R'])/len(v['R'])
+        v['B_avg'] = sum(v['B'])/len(v['B'])
+        v['G_avg'] = sum(v['R'])/len(v['G'])
+    neighbor_pairs = set()
