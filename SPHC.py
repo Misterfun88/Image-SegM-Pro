@@ -69,3 +69,18 @@ def getNearestNeighbors(segm_dict):
         v['B_avg'] = sum(v['B'])/len(v['B'])
         v['G_avg'] = sum(v['R'])/len(v['G'])
     neighbor_pairs = set()
+    nearest_neighbors = []
+    shortest_dist = 100.0
+
+    for k, v in segm_dict.items():
+        for neighbor in v['neighbors']:
+            neighbor_pair = tuple(sorted([k, neighbor]))
+            if neighbor_pair not in neighbor_pairs and k <> neighbor:
+                neighbor_pairs.add(neighbor_pair)
+                eucl_dist = float(math.sqrt((v['R_avg'] - segm_dict[neighbor]['R_avg']) ** 2 +
+                                            (v['B_avg'] - segm_dict[neighbor]['B_avg']) ** 2 +
+                                            (v['G_avg'] - segm_dict[neighbor]['G_avg']) ** 2))
+                if eucl_dist < shortest_dist:
+                    shortest_dist = eucl_dist
+                    nearest_neighbors = neighbor_pair
+    return nearest_neighbors, shortest_dist
