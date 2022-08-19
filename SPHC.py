@@ -84,3 +84,20 @@ def getNearestNeighbors(segm_dict):
                     shortest_dist = eucl_dist
                     nearest_neighbors = neighbor_pair
     return nearest_neighbors, shortest_dist
+
+def mergeSegments(segm_dict, nearest_neighbors):
+    '''
+    Merges the pair of neighboring segments with the shortest euclidean distance (greatest color similarity)
+    :param segm_dict: dictionary of dictionaries of segment attributes
+    :param nearest_neighbors: segment pair with smallest color euclidean distance
+    :return: segm_dict: updated dictionary of dictionaries of segment attributes
+    '''
+    mergeto_dict = segm_dict[nearest_neighbors[0]]
+    mergefrom_dict = copy.deepcopy(segm_dict[nearest_neighbors[1]])
+
+    mergeto_dict['neighbors'] = mergeto_dict['neighbors'] | mergefrom_dict['neighbors']
+    mergeto_dict['neighbors'].discard(nearest_neighbors[0])
+    mergeto_dict['R'] += mergefrom_dict['R']
+    mergeto_dict['B'] += mergefrom_dict['B']
+    mergeto_dict['G'] += mergefrom_dict['G']
+    mergeto_dict['coord'] = mergeto_dict['coord'] | mergefrom_dict['coord']
