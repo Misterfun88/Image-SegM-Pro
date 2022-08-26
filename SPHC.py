@@ -133,3 +133,14 @@ def getSPHCsegments(segm_grid, image, numToMerge = 10, max_dist = 1.0):
             print merge_count, "segments merged"
 
     print merge_count, "segments merged - final"
+
+    newSegmGrid = copy.deepcopy(segm_grid)
+    for k, v in segm_dict.items():
+        for coord in v['coord']:
+            newSegmGrid[coord[0], coord[1]] = int(k)
+
+    return newSegmGrid
+
+
+if __name__ == '__main__':
+    image = img_as_float(io.imread(imagePath))
