@@ -108,3 +108,10 @@ def mergeSegments(segm_dict, nearest_neighbors):
 
     del segm_dict[nearest_neighbors[1]]
     return segm_dict
+
+def getSPHCsegments(segm_grid, image, numToMerge = 10, max_dist = 1.0):
+    '''
+    Main function for running SPHC clustering algorithm. Initiates segment attributes. Then
+    iteratively finds and merges neighboring segments with most similar color.
+    :param segm_grid: Each pixel has been identified with a segment identifier by the skimage SLIC function
+    :param image: Each pixel has R, B, and G value associated with it
