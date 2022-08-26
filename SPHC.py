@@ -101,3 +101,10 @@ def mergeSegments(segm_dict, nearest_neighbors):
     mergeto_dict['B'] += mergefrom_dict['B']
     mergeto_dict['G'] += mergefrom_dict['G']
     mergeto_dict['coord'] = mergeto_dict['coord'] | mergefrom_dict['coord']
+
+    for neighbor in mergefrom_dict['neighbors']:
+        segm_dict[neighbor]['neighbors'].add(nearest_neighbors[0])
+        segm_dict[neighbor]['neighbors'].discard(nearest_neighbors[1])
+
+    del segm_dict[nearest_neighbors[1]]
+    return segm_dict
