@@ -115,3 +115,21 @@ def getSPHCsegments(segm_grid, image, numToMerge = 10, max_dist = 1.0):
     iteratively finds and merges neighboring segments with most similar color.
     :param segm_grid: Each pixel has been identified with a segment identifier by the skimage SLIC function
     :param image: Each pixel has R, B, and G value associated with it
+    :param numToMerge: User input - number of segments to merge. Must be less than number of segments.
+    :param max_dist: Maximum euclidean distance for pair of segments to merge
+    :return: segm_grid: Each pixel has been identified with a segment identifier by the SPHC function
+    '''
+    print "Initiating Segment Attributes..."
+    segm_dict = initiateSegmentAttributes(segm_grid, image)
+    shortest_dist = 0.0
+    merge_count = 0
+
+    print "Merging Segments..."
+    while shortest_dist <= max_dist and merge_count <= numToMerge:
+        nearest_neighbors, shortest_dist = getNearestNeighbors(segm_dict)
+        segm_dict = mergeSegments(segm_dict, nearest_neighbors)
+        merge_count += 1
+        if merge_count % 20 == 0:
+            print merge_count, "segments merged"
+
+    print merge_count, "segments merged - final"
