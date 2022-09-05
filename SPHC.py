@@ -144,3 +144,12 @@ def getSPHCsegments(segm_grid, image, numToMerge = 10, max_dist = 1.0):
 
 if __name__ == '__main__':
     image = img_as_float(io.imread(imagePath))
+    SLICsegm_grid = slic(image, n_segments = numSegments, sigma = Sigma)
+
+    SPHCsegm_grid = getSPHCsegments(SLICsegm_grid, image, numToMerge = segmentsToMerge, max_dist = distance_limit)
+
+    fig = plt.figure("%d Segments Merged" % segmentsToMerge)
+    ax = fig.add_subplot(1, 1, 1)
+    ax.imshow(mark_boundaries(image, SPHCsegm_grid))
+    plt.axis("off")
+    plt.show()
