@@ -1,1 +1,1 @@
-# Superpixel Hierarc
+# Superpixel Hierarchical Clustering
