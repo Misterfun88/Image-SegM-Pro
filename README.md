@@ -1,1 +1,1 @@
-# Superpixel Hierarchical Clustering Algorithm (SPHC)
+# Superpixel Hierarchical Clustering Algorithm (SPHC) For
