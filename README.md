@@ -1,1 +1,1 @@
-# Superpixel Hierarchical Clustering Algorithm (SPHC) For Professio
+# Superpixel Hierarchical Clustering Algorithm (SPHC) For Professional Imag
