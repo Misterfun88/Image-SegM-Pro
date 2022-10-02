@@ -1,3 +1,3 @@
 # Superpixel Hierarchical Clustering Algorithm (SPHC) For Professional Image Segmentation\
 \
-This is a c
+This is a comprehens
