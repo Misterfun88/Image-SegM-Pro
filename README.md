@@ -5,4 +5,4 @@ This is a comprehensive project that uses Superpixels for initial image segmenti
 The algorithm uses two main inputs: an RGB pixel grid that represents an image and a grid of segments from the sklearn SLIC superpixel-creating algorithm.\
 \
 After segment assignment, the superpixel hierarchical clustering mechanism proceeds as follows:\
-1. Cycle through the subsequent four steps as long as the smallest clus
+1. Cycle through the subsequent four steps as long as the smallest cluster e
