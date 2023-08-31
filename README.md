@@ -7,4 +7,4 @@ The algorithm uses two main inputs: an RGB pixel grid that represents an image a
 After segment assignment, the superpixel hierarchical clustering mechanism proceeds as follows:\
 1. Cycle through the subsequent four steps as long as the smallest cluster euclidean distance is below a set threshold:\
     1a. Identify pairs of neighboring segments for each of the 1 to K superpixels.\
-    1b. Compute average RGB val
+    1b. Compute average RGB values for every
