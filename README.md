@@ -8,4 +8,4 @@ After segment assignment, the superpixel hierarchical clustering mechanism proce
 1. Cycle through the subsequent four steps as long as the smallest cluster euclidean distance is below a set threshold:\
     1a. Identify pairs of neighboring segments for each of the 1 to K superpixels.\
     1b. Compute average RGB values for every segment.\
-    1c. For every pair of neighb
+    1c. For every pair of neighboring segments,
