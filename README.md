@@ -10,4 +10,4 @@ After segment assignment, the superpixel hierarchical clustering mechanism proce
     1b. Compute average RGB values for every segment.\
     1c. For every pair of neighboring segments, calculate the euclidean distance using the average of RGB values.\
     1d. Merge the two segments that show the shortest RGB euclidean distance.\
-    2. Yie
+    2. Yield the proce
