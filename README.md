@@ -12,4 +12,5 @@ After segment assignment, the superpixel hierarchical clustering mechanism proce
     1d. Merge the two segments that show the shortest RGB euclidean distance.\
     2. Yield the processed image.\
 \
-## Important Ref
+## Important References\
+1
