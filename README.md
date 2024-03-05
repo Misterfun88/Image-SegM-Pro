@@ -13,4 +13,4 @@ After segment assignment, the superpixel hierarchical clustering mechanism proce
     2. Yield the processed image.\
 \
 ## Important References\
-1. Achanta Radhakrishn
+1. Achanta Radhakrishna, Shaji 
