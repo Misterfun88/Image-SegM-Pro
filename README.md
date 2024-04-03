@@ -13,4 +13,5 @@ After segment assignment, the superpixel hierarchical clustering mechanism proce
     2. Yield the processed image.\
 \
 ## Important References\
-1. Achanta Radhakrishna, Shaji Appu, Smith Kevin, Lucchi Aure-lien, Fua Pascal, and Susstrunk Sabine, SLIC Superpixels, EPFL Technical Report 149300,
+1. Achanta Radhakrishna, Shaji Appu, Smith Kevin, Lucchi Aure-lien, Fua Pascal, and Susstrunk Sabine, SLIC Superpixels, EPFL Technical Report 149300, June 2010.\
+2. A
