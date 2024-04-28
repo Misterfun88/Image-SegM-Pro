@@ -14,4 +14,4 @@ After segment assignment, the superpixel hierarchical clustering mechanism proce
 \
 ## Important References\
 1. Achanta Radhakrishna, Shaji Appu, Smith Kevin, Lucchi Aure-lien, Fua Pascal, and Susstrunk Sabine, SLIC Superpixels, EPFL Technical Report 149300, June 2010.\
-2. Adrian Rosebrock, A SLIC Superpixel Tutorial using Python, a guide which can be found at http://www.pyimagesearch.com/2014/07/28/a-slic-superpix
+2. Adrian Rosebrock, A SLIC Superpixel Tutorial using Python, a guide which can be found at http://www.pyimagesearch.com/2014/07/28/a-slic-superpixel-tutoria
